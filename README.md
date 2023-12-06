@@ -1,30 +1,28 @@
-# Project_06 - Reminder App
+# Bonus Project - Reminder App
 <span style="font-size: smaller;"><strong>Ashley Steitz and Jacob Fritz worked on this as partners</strong></span>
 
 ---
 <span style="font-size: smaller;"><strong> Description </strong> </span>
-In our efforts to complete Project 05 we implemented an interactive Ui (User Interface) that allows the user to create a reminder and select a date and time.
+In our efforts to complete the Bonus project we implemented an interactive Ui (User Interface) that allows the user to create a reminder and select a date and time.
 
 This app allows for a user to:
 - Create a reminder
+- Add a description
 - Select a date and time
 - Delete the reminder
 
-To begin we integrated SQL into our data handling to store our user entries. We used a recycler view to store the reminders and display them on the main note page (screen)
-and it allows for users to scroll and view all posted notes without fear of losing the content when it goes off the page!
+To begin we integrated SQL into our data handling to store our user entries. We used a recycler view to store the reminders and display them on the main reminder page (screen)
+and it allows for users to scroll and view all reminders without fear of losing the content when it goes off the page!
 <br>
 <br>
-To begin a user is prompted to "Add a Note" at the bottom  of the main screen where they are taken to the next fragment, prompting for a Note Title and Note Body.
-After the user enters both they have the option to go "BACK" to the main page or "SAVE". If "SAVE" is pressed, then their note title and bosy are inserted into the database.
-If they select back, then their note is not saved and they will return back to the main page and will _not_ see their note present.
+The app opens and has a + sign at the top for the user to create a reminder in the ribbon. When
+pressedm they are navigated to the next fragment, which prompts them to add a title, description,
+and then selecte a date for the reminder as well as a time.
+<br>
+After the user enters all fields, then they can press the escape button which takes them to the main screen and they can delete or add notes as they please
 <br>
 <br>
-When a user clicks onto the note title then the screen is brought up with their their previous body, allowing them to make edits to the
-previously held data in that note. They need to select the save button to save their modified (or newly created note), where their changes are enacted into their note using the "Update" call to the database.
-If the back button is pressed then their changes are not saved and they are brought back to the main screen.
-<br>
-<br>
-On the main screen after a note is created, we see the title and a button with a red "X", this is a delete button and if this is pressed the user is greeted by a dialog that prompts
+On the main screen after the trashcan icon is selected (this is a delete button) the user is greeted by a dialog that prompts
 them to select "YES" or "NO", confirming or denying their selection to delete their note. If they delete the note the note title and body are deleted from the data base. If "NO" is selected,
 then nothing happens to the database.
 
@@ -40,25 +38,11 @@ Safeargs and View Groups were implemented to transfer data from MainActivity.kt 
 <br>
 **START**
 <br>
-* [Add Note] -> [TITLE:Names of my friends] [Typed: Ashley, Jacob, Anna, Clarissa, Jenna, John, Kyle] [SAVE]
-* [Add Note] -> [TITLE:Cities] [Typed: New York, Miami, Seattle, Chicago, Paris, Madrid] [BACK]
-* [Add Note] -> [TITLE:Cities] [Typed: New York, Miami, Seattle, Chicago, Paris, Madrid] [SAVE]
-* [Add Note] -> [TITLE:Food] [Typed: Popcorn, Salad, Fruit, Vegtable, Pasta ] [SAVE]
-* [Cities]   -> [TITLE:Cities] [Typed: New York, Miami, Seattle ] [SAVE]
-* [Add Note] -> [TITLE:Test 2]  [Typed: u] [SAVE]
-  [Add Note] -> [TITLE:TEST 3]  [Typed: T] [SAVE]
-  [Add Note] -> [TITLE:TEST 4]  [Typed: T] [SAVE]
-  [Add Note] -> [TITLE:TEST 5]  [Typed: T] [SAVE]
-* [Add Note] -> [TITLE:Animals you see at the Zoo]  [Typed: Cat, Dog, Elepant, Snake, Zebra] [SAVE]
-* [Add Note] -> [TITLE:Hello] [Typed: Hello, Aloha, Hola, Bonjour, Ni Hao, Halo ] [SAVE]
-* [Animals]  -> [TITLE:House Pet]  [Typed: Cat] [BACK]
-* [Cities] [BACK]
-* [House Pet] [Type: Cat] [BACK]
-* [Test 2] [X] [yes]
-* [TEST 3] [X] [yes]
-* [TEST 4] [X] [yes]
-* [TEST 5] [X] [yes]
-* [friends] [X] [no]
+* [ + ] -> [TITLE:Feed Dog] [Description:feed dogs when you get home] [Date: Dec. 8] [Time: 7:30] [esc]
+* [ + ] -> [TITLE:Feed Cat] [Description:feed cat when you get home] [Date: Dec. 9] [Time: 17:30] [esc]
+* [ + ] -> [TITLE:Submit Final project] [Description:submit C323 final project] [Date: Dec. 13] [Time: 11:59] [esc]
+* [Feed Dog] [trashcan] [yes]
+* [Feed Dog] [trashcan] [no]
 
 <br>
 
@@ -78,8 +62,8 @@ GIF created with [CloudConvert](https://cloudconvert.com/).
 
 ## Notes
 UI Challenges:
-- Had the wrong auto set for the view of the notes (needed to be wrap contents instead of match parent)
-    - due to this we were not able to see the notes as they popped up
+- Had the wrong auto set for the view of the remidners (needed to be wrap contents instead of match parent)
+    - due to this we were not able to see the reminders they popped up
 - Integrating a recycler View into the UI for the main notes page
 - Adding in a constraint layout to keep the buttons in place when the user is typing
 - Adding function calls inside the xml files
